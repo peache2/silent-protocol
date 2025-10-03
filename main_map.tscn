@@ -1,35 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwemwfx7wx1k8"]
+[gd_scene load_steps=6 format=3 uid="uid://dwemwfx7wx1k8"]
 
-[ext_resource type="Script" uid="uid://cu667cikji85f" path="res://character_body_3d.gd" id="1_5hk42"]
-[ext_resource type="PackedScene" uid="uid://0t7ej0xwqcnq" path="res://meshes/character/character_anim.gltf" id="1_dyl4d"]
-[ext_resource type="AnimationLibrary" uid="uid://bkqpk2t4mafj6" path="res://Animations.res" id="2_km2bi"]
+[ext_resource type="PackedScene" uid="uid://dqw8f5rjx5o66" path="res://meshes/character/player.tscn" id="1_dyl4d"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_6noos"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_5hk42"]
+size = Vector3(15, 1, 15)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_km2bi"]
-albedo_color = Color(0.3147694, 0.31799555, 0.32684043, 1)
+[sub_resource type="BoxMesh" id="BoxMesh_ob7o4"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dyl4d"]
-radius = 0.3
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_km2bi"]
-animation = &"Animations/Idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5hk42"]
-animation = &"Animations/Walk"
-
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_ob7o4"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_1ns3a"]
-graph_offset = Vector2(-529.906, -1.0777054)
-nodes/output/position = Vector2(300, -40)
-nodes/Idle/node = SubResource("AnimationNodeAnimation_km2bi")
-nodes/Idle/position = Vector2(-360, 40)
-nodes/Walk/node = SubResource("AnimationNodeBlend2_ob7o4")
-nodes/Walk/position = Vector2(-20, -60)
-"nodes/Walk /node" = SubResource("AnimationNodeAnimation_5hk42")
-"nodes/Walk /position" = Vector2(-360, 220)
-node_connections = [&"output", 0, &"Walk", &"Walk", 0, &"Idle", &"Walk", 1, &"Walk "]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyl4d"]
+albedo_color = Color(0.66321856, 0.66277754, 0.7407886, 1)
 
 [sub_resource type="Environment" id="Environment_km2bi"]
 background_mode = 1
@@ -37,42 +16,23 @@ background_color = Color(0.3382641, 0.7035315, 0.9805612, 1)
 
 [node name="MainMap" type="Node3D"]
 
-[node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(28.698872, 0, 0, 0, 1, 0, 0, 0, 19.732412, 0.0010330677, 0.015329123, -0.034659028)
-mesh = SubResource("PlaneMesh_6noos")
-surface_material_override/0 = SubResource("StandardMaterial3D_km2bi")
+[node name="Floor" type="StaticBody3D" parent="."]
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("1_5hk42")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_5hk42")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99330974, 0)
-shape = SubResource("CapsuleShape3D_dyl4d")
-
-[node name="Character" parent="CharacterBody3D" instance=ExtResource("1_dyl4d")]
-transform = Transform3D(-0.01, 0, -8.7422775e-10, 0, 0.01, 0, 8.7422775e-10, 0, -0.01, -0.032892942, 0.8725594, 0.033165455)
-
-[node name="Animation" type="AnimationPlayer" parent="CharacterBody3D/Character"]
-libraries = {
-&"Animations": ExtResource("2_km2bi")
-}
-autoplay = "Animations/Idle"
-
-[node name="AnimationTree" type="AnimationTree" parent="CharacterBody3D/Character"]
-tree_root = SubResource("AnimationNodeBlendTree_1ns3a")
-anim_player = NodePath("../Animation")
-parameters/Walk/blend_amount = 0.0
-
-[node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D"]
-
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6504568, 1.312172)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, 0)
+mesh = SubResource("BoxMesh_ob7o4")
+surface_material_override/0 = SubResource("StandardMaterial3D_dyl4d")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_km2bi")
 
+[node name="Player" parent="." instance=ExtResource("1_dyl4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3722062, 0)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.7117196, 0.7024637, 0, -0.7024637, 0.7117196, 0, 2.335019, -3.8068964)
+transform = Transform3D(1, 0, 0, 0, -0.7650226, 0.6440034, 0, -0.6440034, -0.7650226, 0, 2.335019, -3.8068964)
 shadow_enabled = true
+directional_shadow_mode = 1
