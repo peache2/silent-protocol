@@ -21,7 +21,7 @@ animation = &"Animations/Walk"
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_ob7o4"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_1ns3a"]
-graph_offset = Vector2(-770.8706, -50.446075)
+graph_offset = Vector2(-529.906, -1.0777054)
 nodes/output/position = Vector2(300, -40)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_km2bi")
 nodes/Idle/position = Vector2(-360, 40)
@@ -43,6 +43,8 @@ mesh = SubResource("PlaneMesh_6noos")
 surface_material_override/0 = SubResource("StandardMaterial3D_km2bi")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_5hk42")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
@@ -63,16 +65,10 @@ tree_root = SubResource("AnimationNodeBlendTree_1ns3a")
 anim_player = NodePath("../Animation")
 parameters/Walk/blend_amount = 0.0
 
-[node name="CamOrigin" type="Node3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 2.1316282e-14, 0, 1, 0, -2.1316282e-14, 0, 1, -7.450581e-09, 1.6855946, 0)
+[node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D"]
 
-[node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D/CamOrigin"]
-transform = Transform3D(-0.01, 0, -8.7422775e-10, 0, 0.01, 0, 8.7422775e-10, 0, -0.01, -0.032892942, -0.026946664, 0.033165455)
-spring_length = 2.0
-margin = 0.5
-
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/CamOrigin/SpringArm3D"]
-transform = Transform3D(-100, 0, 8.742275e-06, 0, 100, 0, -8.742275e-06, 0, -100, -40.252308, -9.851944, -84.2326)
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6504568, 1.312172)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_km2bi")
