@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwemwfx7wx1k8"]
+[gd_scene load_steps=7 format=3 uid="uid://dwemwfx7wx1k8"]
 
 [ext_resource type="PackedScene" uid="uid://dqw8f5rjx5o66" path="res://meshes/character/player.tscn" id="1_dyl4d"]
 
@@ -14,6 +14,8 @@ albedo_color = Color(0.66321856, 0.66277754, 0.7407886, 1)
 background_mode = 1
 background_color = Color(0.3382641, 0.7035315, 0.9805612, 1)
 
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_dyl4d"]
+
 [node name="MainMap" type="Node3D"]
 
 [node name="Floor" type="StaticBody3D" parent="."]
@@ -28,11 +30,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_dyl4d")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_km2bi")
+camera_attributes = SubResource("CameraAttributesPractical_dyl4d")
 
 [node name="Player" parent="." instance=ExtResource("1_dyl4d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3722062, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.7650226, 0.6440034, 0, -0.6440034, -0.7650226, 0, 2.335019, -3.8068964)
+transform = Transform3D(1, 0, 0, 0, 0.93452173, 0.3559063, 0, -0.3559063, 0.93452173, 0, 2.335019, -3.8068964)
 shadow_enabled = true
 directional_shadow_mode = 1
