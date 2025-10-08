@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwemwfx7wx1k8"]
+[gd_scene load_steps=12 format=3 uid="uid://dwemwfx7wx1k8"]
 
 [ext_resource type="PackedScene" uid="uid://dqw8f5rjx5o66" path="res://meshes/character/player.tscn" id="1_dyl4d"]
+[ext_resource type="PackedScene" uid="uid://bfr15i4l0k4y3" path="res://meshes/character/enemy/terrifying_hooded_horror_woman/scene.gltf" id="2_km2bi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dyl4d"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -11,9 +12,9 @@ sky_material = SubResource("ProceduralSkyMaterial_dyl4d")
 
 [sub_resource type="Environment" id="Environment_5hk42"]
 background_mode = 2
+background_energy_multiplier = 0.0
 sky = SubResource("Sky_km2bi")
 tonemap_mode = 2
-glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5hk42"]
 size = Vector3(15, 1, 15)
@@ -22,6 +23,14 @@ size = Vector3(15, 1, 15)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyl4d"]
 albedo_color = Color(0, 0.56594884, 0.34422547, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_km2bi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_km2bi"]
+size = Vector3(0.595, 1.592, 0.37)
+
+[sub_resource type="BoxMesh" id="BoxMesh_km2bi"]
+size = Vector3(0.82, 1.765, 11.82)
 
 [node name="MainMap" type="Node3D"]
 
@@ -46,6 +55,41 @@ transform = Transform3D(-0.9999125, 0, 0.013229135, 0, 1, 0, -0.013229135, 0, -0
 transform = Transform3D(0.99078107, -0.13126893, 0.03348929, 0.08189399, 0.77726245, 0.6238241, -0.1079187, -0.61533046, 0.780847, 0, 2.7950294, -3.8068964)
 shadow_enabled = true
 directional_shadow_split_1 = 0.04
+
+[node name="Nun" parent="." instance=ExtResource("2_km2bi")]
+transform = Transform3D(-0.6040985, 0, -0.7969097, 0, 1, 0, 0.7969097, 0, -0.6040985, 2.7998276, 0.44932854, 1.9105744)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Nun"]
+physics_material_override = SubResource("PhysicsMaterial_km2bi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Nun/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8228961, 0.1650548)
+shape = SubResource("BoxShape3D_km2bi")
+
+[node name="Wall1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.24755347, 0, 0, 0, 1, 0, 0, 0, 0.8378325, 4.152892, 1.3339942, 0)
+mesh = SubResource("BoxMesh_km2bi")
+
+[node name="Wall" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.24755347, 0, 0, 0, 1, 0, 0, 0, 0.8378325, -2.770756, 1.3339942, 0)
+mesh = SubResource("BoxMesh_km2bi")
+
+[node name="Wall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.0820906e-08, 0, 0.8378325, 0, 1, 0, -0.24755347, 0, -3.6622822e-08, 0.8457825, 1.3339942, -4.8621154)
+mesh = SubResource("BoxMesh_km2bi")
+
+[node name="Wall3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.0820906e-08, 0, 0.8378325, 0, 1, 0, -0.24755347, 0, -3.6622822e-08, 0.8457825, 1.3339942, 4.910126)
+mesh = SubResource("BoxMesh_km2bi")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(15, 0, 0, 0, 0.092341065, 0, 0, 0, 15, -0.37498045, 2.4647224, -0.20241356)
+mesh = SubResource("BoxMesh_ob7o4")
+skeleton = NodePath("../Floor")
+surface_material_override/0 = SubResource("StandardMaterial3D_dyl4d")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.052366, 1.7854029, -2.552506)
 
 [editable path="Player"]
 [editable path="Player/Mesh"]

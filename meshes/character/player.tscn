@@ -4,14 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://0t7ej0xwqcnq" path="res://meshes/character/models/character_anim.gltf" id="1_vlbet"]
 [ext_resource type="Script" uid="uid://dgfy46xf70b8w" path="res://meshes/character/camerascript.gd" id="3_r8grn"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e3ta6"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_r8grn"]
+size = Vector3(0.55, 1.645, 0.36)
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
 script = ExtResource("1_e3ta6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_e3ta6")
+shape = SubResource("BoxShape3D_r8grn")
 
 [node name="Mesh" parent="." instance=ExtResource("1_vlbet")]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
@@ -109,6 +110,9 @@ transform = Transform3D(-0.83819026, -0.5448117, 0.024853498, -0.07738456, 0.163
 
 [node name="mixamorigLeftToeBase" parent="Mesh/Node/Skeleton3D" index="12"]
 transform = Transform3D(-0.9357467, 0.352104, 0.020012453, 0.06739221, 0.12282425, 0.9901377, 0.34617338, 0.9278668, -0.1386615, 21.064768, 1.5141964, 19.265291)
+
+[node name="AnimationPlayer" parent="Mesh" index="1"]
+autoplay = "Idle"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.8805562e-08, 0.66350937, 0.1245436)
