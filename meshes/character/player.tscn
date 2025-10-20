@@ -111,11 +111,8 @@ transform = Transform3D(-0.83819026, -0.5448117, 0.024853498, -0.07738456, 0.163
 [node name="mixamorigLeftToeBase" parent="Mesh/Node/Skeleton3D" index="12"]
 transform = Transform3D(-0.9357467, 0.352104, 0.020012453, 0.06739221, 0.12282425, 0.9901377, 0.34617338, 0.9278668, -0.1386615, 21.064768, 1.5141964, 19.265291)
 
-[node name="AnimationPlayer" parent="Mesh" index="1"]
-autoplay = "Idle"
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.8805562e-08, 0.66350937, 0.1245436)
+[node name="Camera3D" type="Camera3D" parent="Mesh/Node" index="1"]
+transform = Transform3D(-100, 3.0646333e-06, -1.1349982e-05, 3.0646333e-06, 100, -1.5133904e-07, 1.1349982e-05, -1.5133938e-07, -100, -3.5103708e-06, 154.83777, 15.745766)
 script = ExtResource("3_r8grn")
 
 [editable path="Mesh"]
