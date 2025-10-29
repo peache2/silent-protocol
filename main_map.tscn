@@ -126,6 +126,69 @@ transform = Transform3D(-0.9999125, 0, 0.013229135, 0, 1, 0, -0.013229135, 0, -0
 [node name="Mesh" parent="Player" index="1"]
 script = ExtResource("2_km2bi")
 
+[node name="Skeleton3D" parent="Player/Mesh/Node" index="0"]
+bones/0/position = Vector3(-0.4108051, 93.57986, 0.941072)
+bones/0/rotation = Quaternion(-0.0364288, -0.043138385, -0.02522372, 0.99808615)
+bones/1/rotation = Quaternion(-0.017966233, 0.015885578, 0.023783626, 0.99942946)
+bones/2/rotation = Quaternion(0.0105778575, 0.00286548, 0.014631956, 0.999833)
+bones/3/rotation = Quaternion(0.009966701, 0.002736125, 0.01452856, 0.99984115)
+bones/4/rotation = Quaternion(0.10141279, -0.0023558338, 0.0028548406, 0.99483764)
+bones/5/rotation = Quaternion(-0.07483563, 0.0067160223, -0.0016350595, 0.99717194)
+bones/6/rotation = Quaternion(-0.68046075, -0.32389542, 0.5163268, -0.40678215)
+bones/7/rotation = Quaternion(0.48225158, 0.13719757, 0.0625634, 0.86295784)
+bones/8/rotation = Quaternion(0.0013331254, -0.0021268881, 0.013299621, 0.99990845)
+bones/9/rotation = Quaternion(0.068964966, -0.24589606, -0.02125881, 0.96660596)
+bones/25/rotation = Quaternion(0.68032664, -0.32145417, 0.5332705, 0.38658172)
+bones/26/rotation = Quaternion(0.41111347, -0.23281972, -0.08136583, 0.8775878)
+bones/27/rotation = Quaternion(0.0057706595, 0.002145991, -0.05726198, 0.9983403)
+bones/28/rotation = Quaternion(0.06789307, 0.13272971, 0.05113411, 0.9875012)
+bones/44/rotation = Quaternion(-0.08782981, -0.040637437, 0.99509704, -0.02040965)
+bones/45/rotation = Quaternion(-0.054215882, 0.085832134, -0.010503015, 0.994778)
+bones/46/rotation = Quaternion(0.5102338, 0.020458257, -0.027856462, 0.85934097)
+bones/47/rotation = Quaternion(0.3726764, 0.07750148, -0.023246618, 0.9244271)
+bones/48/rotation = Quaternion(0.13638215, 0.056197394, 0.9855435, -0.083342485)
+bones/49/rotation = Quaternion(-0.1142644, -0.009993215, 0.019121392, 0.9932161)
+bones/50/rotation = Quaternion(0.4647467, -0.029170483, -0.013459488, 0.8848607)
+
+[node name="mixamorigHead" parent="Player/Mesh/Node/Skeleton3D" index="0"]
+transform = Transform3D(0.9979901, -0.056867257, -0.027963296, 0.057343673, 0.9982175, 0.01654026, 0.026972849, -0.018110543, 0.99947214, -1.3218468, 153.40944, -0.82132196)
+
+[node name="mixamorigLeftHandThumb3" parent="Player/Mesh/Node/Skeleton3D" index="1"]
+transform = Transform3D(0.26826447, 0.07845457, -0.96014535, -0.283162, -0.9462285, -0.15643278, -0.9207897, 0.3138419, -0.23162407, 21.370775, 82.53306, 7.051054)
+
+[node name="mixamorigLeftHandIndex3" parent="Player/Mesh/Node/Skeleton3D" index="2"]
+transform = Transform3D(0.11530123, -0.5231151, -0.84442675, -0.038841955, -0.85182065, 0.52239203, -0.992571, -0.027433231, -0.11853466, 22.930157, 75.87558, 6.223416)
+
+[node name="mixamorigLeftHandMiddle3" parent="Player/Mesh/Node/Skeleton3D" index="3"]
+transform = Transform3D(0.13481587, -0.7556017, -0.6410078, 0.03877284, -0.64239544, 0.7653922, -0.9901118, -0.12804063, -0.057308197, 22.471676, 75.53535, 3.1945946)
+
+[node name="mixamorigLeftHandRing3" parent="Player/Mesh/Node/Skeleton3D" index="4"]
+transform = Transform3D(0.13443568, -0.83882296, -0.52754444, 0.06434509, -0.5238639, 0.84936833, -0.98883104, -0.14813022, -0.01645181, 22.601736, 76.81984, 0.7433511)
+
+[node name="mixamorigLeftHandPinky3" parent="Player/Mesh/Node/Skeleton3D" index="5"]
+transform = Transform3D(0.14728005, -0.8447438, -0.5145061, 0.09092883, -0.50641227, 0.857484, -0.9849064, -0.17307365, 0.0022272244, 22.72378, 78.707565, -1.5686436)
+
+[node name="mixamorigRightHandThumb3" parent="Player/Mesh/Node/Skeleton3D" index="6"]
+transform = Transform3D(0.5382415, -0.023215234, 0.8424711, 0.24510957, -0.95209974, -0.18283279, 0.8063608, 0.3049059, -0.50676906, -19.677277, 79.93928, 4.270303)
+
+[node name="mixamorigRightHandIndex3" parent="Player/Mesh/Node/Skeleton3D" index="7"]
+transform = Transform3D(0.41427368, 0.49959764, 0.76077586, 0.040163893, -0.84509814, 0.5331008, 0.9092659, -0.19029379, -0.3701676, -21.330645, 73.06781, 3.8830488)
+
+[node name="mixamorigRightHandMiddle3" parent="Player/Mesh/Node/Skeleton3D" index="8"]
+transform = Transform3D(0.43179974, 0.6905717, 0.5802241, -0.03219521, -0.63107526, 0.77505344, 0.90139484, -0.35334817, -0.25026497, -21.686522, 73.03286, 0.9436997)
+
+[node name="mixamorigRightHandRing3" parent="Player/Mesh/Node/Skeleton3D" index="9"]
+transform = Transform3D(0.42635944, 0.76488876, 0.48286968, -0.054902487, -0.51095396, 0.8578531, 0.9028863, -0.39226437, -0.17585579, -22.7027, 74.2546, -1.3532057)
+
+[node name="mixamorigRightHandPinky3" parent="Player/Mesh/Node/Skeleton3D" index="10"]
+transform = Transform3D(0.44054046, 0.76362956, 0.4720109, -0.07420583, -0.49300653, 0.8668553, 0.8946608, -0.41691065, -0.16052358, -23.39481, 76.39306, -3.4606783)
+
+[node name="mixamorigRightToeBase" parent="Player/Mesh/Node/Skeleton3D" index="11"]
+transform = Transform3D(-0.8378363, -0.54543585, 0.023019433, -0.07690941, 0.15967509, 0.984169, -0.54047674, 0.8228023, -0.17573074, -16.018951, 1.4455996, 8.30498)
+
+[node name="mixamorigLeftToeBase" parent="Player/Mesh/Node/Skeleton3D" index="12"]
+transform = Transform3D(-0.93585664, 0.3519265, 0.017876305, 0.06403561, 0.119962275, 0.99071103, 0.34651306, 0.9283085, -0.13480335, 21.046593, 1.488554, 19.219769)
+
 [node name="AnimationPlayer" parent="Player/Mesh" index="1"]
 libraries = {}
 
