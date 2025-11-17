@@ -1,0 +1,11 @@
+Model Information:
+* title:	Grandfather Clock
+* source:	https://sketchfab.com/3d-models/grandfather-clock-c03d8b43ea2a455eb9f101eef1f0d95f
+* author:	Carl-HeinzLangley (https://sketchfab.com/Carl-HeinzLangley)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Grandfather Clock" (https://sketchfab.com/3d-models/grandfather-clock-c03d8b43ea2a455eb9f101eef1f0d95f) by Carl-HeinzLangley (https://sketchfab.com/Carl-HeinzLangley) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dwemwfx7wx1k8"]
+[gd_scene load_steps=38 format=3 uid="uid://dwemwfx7wx1k8"]
 
 [ext_resource type="PackedScene" uid="uid://dqw8f5rjx5o66" path="res://meshes/character/player.tscn" id="1_dyl4d"]
 [ext_resource type="Texture2D" uid="uid://bmqj3o2qit3u8" path="res://textures/wood_floor/wood_planks_diff_4k.png" id="1_hio4h"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://c5h45ijvrxl07" path="res://textures/wall_plaster/plastered_wall_diff_4k.png" id="7_286o7"]
 [ext_resource type="Texture2D" uid="uid://cp0dse817jsn3" path="res://textures/wall_plaster/plastered_wall_nor_gl_4k.png" id="8_4ly05"]
 [ext_resource type="Texture2D" uid="uid://coj6qorbt54is" path="res://textures/wall_plaster/plastered_wall_rough_4k.png" id="9_t3ofs"]
+[ext_resource type="PackedScene" uid="uid://wwt4ajnyqcen" path="res://props/grandfather_clock/scene.gltf" id="11_4ly05"]
+[ext_resource type="PackedScene" uid="uid://coc3w8wwubbe1" path="res://props/ghost.glb" id="12_t3ofs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dyl4d"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -117,6 +119,9 @@ transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt6kx"]
 size = Vector3(1, 1.655, 12.44)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_i4yi8"]
+size = Vector3(0.8, 2.295, 0.62)
+
 [node name="MainMap" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -126,7 +131,7 @@ environment = SubResource("Environment_5hk42")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.491901, -0.37084818, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8526151, -4.9083605)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11589, 0.8526151, -4.9083605)
 shape = SubResource("BoxShape3D_5hk42")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
@@ -141,67 +146,67 @@ transform = Transform3D(-0.9999125, 0, 0.013229135, 0, 1, 0, -0.013229135, 0, -0
 script = ExtResource("2_km2bi")
 
 [node name="Skeleton3D" parent="Player/Mesh/Node" index="0"]
-bones/0/position = Vector3(-0.035455108, 93.626816, 0.34188318)
-bones/0/rotation = Quaternion(-0.03224836, -0.048189078, -0.026195548, 0.9979738)
-bones/1/rotation = Quaternion(-0.018704519, 0.0126632815, 0.02320843, 0.9994755)
-bones/2/rotation = Quaternion(0.011023198, 0.0018402041, 0.014393687, 0.999834)
-bones/3/rotation = Quaternion(0.01079453, 0.0020331962, 0.014435738, 0.99983555)
-bones/4/rotation = Quaternion(0.099945076, -0.0017384981, 0.004659991, 0.9949805)
-bones/5/rotation = Quaternion(-0.070012525, 0.01045887, -0.00079303066, 0.99749094)
-bones/6/rotation = Quaternion(-0.67941415, -0.32566345, 0.51412994, -0.40989038)
-bones/7/rotation = Quaternion(0.48538178, 0.14084995, 0.06104137, 0.8607206)
-bones/8/rotation = Quaternion(0.0013381917, -0.002126888, 0.013347884, 0.99990785)
-bones/9/rotation = Quaternion(0.071058884, -0.24785845, -0.02022684, 0.96597505)
-bones/25/rotation = Quaternion(0.67817295, -0.3245014, 0.5327945, 0.3884719)
-bones/26/rotation = Quaternion(0.41256666, -0.23055468, -0.08592808, 0.8770688)
-bones/27/rotation = Quaternion(0.0058630453, 0.0021458415, -0.0581775, 0.9982867)
-bones/28/rotation = Quaternion(0.06773299, 0.13079526, 0.049368855, 0.9878601)
-bones/44/rotation = Quaternion(-0.08680679, -0.03417202, 0.9954393, -0.019941276)
-bones/45/rotation = Quaternion(-0.04806659, 0.08566779, -0.009351551, 0.99511975)
-bones/46/rotation = Quaternion(0.5029636, 0.016391464, -0.026828194, 0.8637356)
-bones/47/rotation = Quaternion(0.37386832, 0.07758173, -0.023219906, 0.9239396)
-bones/48/rotation = Quaternion(0.13380706, 0.060630895, 0.9857867, -0.08151267)
-bones/49/rotation = Quaternion(-0.10926701, -0.018142872, 0.01957254, 0.9936542)
-bones/50/rotation = Quaternion(0.4610216, -0.028364738, -0.012561677, 0.88684654)
+bones/0/position = Vector3(0.04106641, 93.61936, 0.515574)
+bones/0/rotation = Quaternion(-0.028773595, -0.05086405, -0.028578458, 0.9978819)
+bones/1/rotation = Quaternion(-0.021213837, 0.010749989, 0.020428492, 0.99950844)
+bones/2/rotation = Quaternion(0.010250229, 0.002024195, 0.013926455, 0.9998485)
+bones/3/rotation = Quaternion(0.01016188, 0.0022862693, 0.014065517, 0.99984694)
+bones/4/rotation = Quaternion(0.09883521, -0.0014386623, 0.0043733567, 0.99509317)
+bones/5/rotation = Quaternion(-0.06728053, 0.011312916, -0.0016653569, 0.99766856)
+bones/6/rotation = Quaternion(-0.6790521, -0.32594663, 0.51537997, -0.40869385)
+bones/7/rotation = Quaternion(0.4823686, 0.14371245, 0.05998952, 0.8620143)
+bones/8/rotation = Quaternion(0.0012882579, -0.0021269028, 0.01285199, 0.9999144)
+bones/9/rotation = Quaternion(0.071110696, -0.24492677, -0.023776075, 0.96663797)
+bones/25/rotation = Quaternion(0.6764941, -0.32633856, 0.5350049, 0.38681865)
+bones/26/rotation = Quaternion(0.4109828, -0.2327517, -0.08556213, 0.8772679)
+bones/27/rotation = Quaternion(0.005829996, 0.0021458792, -0.05784952, 0.99830604)
+bones/28/rotation = Quaternion(0.07291666, 0.1299918, 0.049070414, 0.98761195)
+bones/44/rotation = Quaternion(-0.08526931, -0.037991807, 0.9953796, -0.022477163)
+bones/45/rotation = Quaternion(-0.03511752, 0.08626935, -0.007830189, 0.995622)
+bones/46/rotation = Quaternion(0.49748778, 0.014660075, -0.0269943, 0.86692697)
+bones/47/rotation = Quaternion(0.37335324, 0.077547066, -0.02323144, 0.92415047)
+bones/48/rotation = Quaternion(0.13464026, 0.065979764, 0.98509365, -0.08431665)
+bones/49/rotation = Quaternion(-0.116228186, -0.019756129, 0.019019196, 0.9928439)
+bones/50/rotation = Quaternion(0.464352, -0.028511953, -0.012472131, 0.8851039)
 
 [node name="mixamorigHead" parent="Player/Mesh/Node/Skeleton3D" index="0"]
-transform = Transform3D(0.99738103, -0.06064468, -0.039412692, 0.060742088, 0.9981527, 0.0012778938, 0.03926237, -0.0036685318, 0.99922216, -0.8420777, 153.476, -0.9816909)
+transform = Transform3D(0.9978499, -0.04679296, -0.04589407, 0.046796326, 0.99890405, -0.0010016859, 0.04589066, -0.0011481494, 0.99894583, -0.16050327, 153.50645, -0.7200737)
 
 [node name="mixamorigLeftHandThumb3" parent="Player/Mesh/Node/Skeleton3D" index="1"]
-transform = Transform3D(0.2880503, 0.06908977, -0.9551197, -0.2692999, -0.9512983, -0.15003031, -0.9189693, 0.30042997, -0.25541592, 21.77435, 82.560104, 6.3633385)
+transform = Transform3D(0.30117702, 0.06249267, -0.95151824, -0.26097563, -0.95435023, -0.14528346, -0.9171608, 0.29207915, -0.27111912, 21.933966, 82.25049, 6.5725565)
 
 [node name="mixamorigLeftHandIndex3" parent="Player/Mesh/Node/Skeleton3D" index="2"]
-transform = Transform3D(0.137332, -0.52447695, -0.84027624, -0.023442352, -0.8497972, 0.52658826, -0.9902475, -0.052619345, -0.12899937, 23.335348, 75.91219, 5.4649177)
+transform = Transform3D(0.15208364, -0.52549934, -0.8370908, -0.014079769, -0.8480087, 0.5297951, -0.98826736, -0.068786986, -0.13636707, 23.493603, 75.60803, 5.6323676)
 
 [node name="mixamorigLeftHandMiddle3" parent="Player/Mesh/Node/Skeleton3D" index="3"]
-transform = Transform3D(0.15697873, -0.75414133, -0.63767445, 0.05406829, -0.63814867, 0.7680124, -0.9861208, -0.15503955, -0.05940069, 22.943752, 75.62127, 2.4216082)
+transform = Transform3D(0.17183691, -0.753139, -0.6350225, 0.06334049, -0.63483036, 0.77005076, -0.983087, -0.17254564, -0.061383046, 23.146952, 75.34781, 2.580839)
 
 [node name="mixamorigLeftHandRing3" parent="Player/Mesh/Node/Skeleton3D" index="4"]
-transform = Transform3D(0.15663327, -0.8366002, -0.5249442, 0.079618014, -0.51907915, 0.85100985, -0.9844425, -0.17509145, -0.01469668, 23.13167, 76.944046, -0.0053994954)
+transform = Transform3D(0.17152265, -0.8350264, -0.5227914, 0.08887332, -0.51537734, 0.8523424, -0.9811633, -0.19265805, -0.014187273, 23.37408, 76.693825, 0.17000741)
 
 [node name="mixamorigLeftHandPinky3" parent="Player/Mesh/Node/Skeleton3D" index="5"]
-transform = Transform3D(0.16945253, -0.84191954, -0.51230586, 0.10609986, -0.50121796, 0.8587917, -0.9798105, -0.19988, 0.0043948516, 23.309958, 78.86779, -2.2837994)
+transform = Transform3D(0.18432936, -0.83993495, -0.5104233, 0.11527844, -0.49726206, 0.8599076, -0.97608066, -0.21734685, 0.0051664226, 23.590675, 78.63933, -2.0864866)
 
 [node name="mixamorigRightHandThumb3" parent="Player/Mesh/Node/Skeleton3D" index="6"]
-transform = Transform3D(0.52366674, -0.029029757, 0.85142845, 0.24763028, -0.95108056, -0.18473116, 0.8151394, 0.30757686, -0.49086058, -19.488983, 80.16437, 3.5635743)
+transform = Transform3D(0.51594293, -0.038693115, 0.85574853, 0.23743115, -0.9533804, -0.18625836, 0.8230609, 0.29928008, -0.48270297, -19.879044, 80.4111, 3.3163314)
 
 [node name="mixamorigRightHandIndex3" parent="Player/Mesh/Node/Skeleton3D" index="7"]
-transform = Transform3D(0.39779344, 0.5026782, 0.7675122, 0.043058887, -0.84585553, 0.5316718, 0.916464, -0.17844743, -0.3581205, -21.137323, 73.2921, 3.1691926)
+transform = Transform3D(0.38760093, 0.49918622, 0.77496994, 0.032860678, -0.84763694, 0.52955824, 0.92124134, -0.17979121, -0.34494847, -21.567286, 73.55332, 2.845953)
 
 [node name="mixamorigRightHandMiddle3" parent="Player/Mesh/Node/Skeleton3D" index="8"]
-transform = Transform3D(0.41543528, 0.6966364, 0.58490276, -0.02933051, -0.63242364, 0.7740675, 0.90914977, -0.3387305, -0.2422983, -21.440058, 73.24752, 0.2240256)
+transform = Transform3D(0.40485543, 0.69633615, 0.59262794, -0.039580155, -0.63416636, 0.7721828, 0.9135236, -0.33607876, -0.22918463, -21.836739, 73.5351, -0.102725744)
 
 [node name="mixamorigRightHandRing3" parent="Player/Mesh/Node/Skeleton3D" index="9"]
-transform = Transform3D(0.4099615, 0.7716835, 0.4862471, -0.05203128, -0.5124514, 0.85713863, 0.9106176, -0.37669393, -0.16993362, -22.414179, 74.46194, -2.0948815)
+transform = Transform3D(0.39921835, 0.77258664, 0.49369487, -0.0622558, -0.51438034, 0.85529935, 0.91473985, -0.3721866, -0.15725207, -22.776495, 74.77503, -2.4223094)
 
 [node name="mixamorigRightHandPinky3" parent="Player/Mesh/Node/Skeleton3D" index="10"]
-transform = Transform3D(0.4242825, 0.7708755, 0.475116, -0.07136548, -0.49458528, 0.8661944, 0.9027133, -0.40141803, -0.15482995, -23.06741, 76.593605, -4.2215586)
+transform = Transform3D(0.41350287, 0.7721759, 0.4824515, -0.081617706, -0.4963054, 0.8643029, 0.9068373, -0.39676827, -0.14220047, -23.391638, 76.92847, -4.53839)
 
 [node name="mixamorigRightToeBase" parent="Player/Mesh/Node/Skeleton3D" index="11"]
-transform = Transform3D(-0.83784103, -0.5453699, 0.024373174, -0.077293605, 0.1627048, 0.9836426, -0.54041475, 0.82225233, -0.17847425, -16.038952, 1.4512272, 8.359411)
+transform = Transform3D(-0.8371658, -0.54641765, 0.024103433, -0.076853454, 0.16115019, 0.98393273, -0.5415227, 0.8218627, -0.17690346, -16.054304, 1.4445887, 8.307182)
 
 [node name="mixamorigLeftToeBase" parent="Player/Mesh/Node/Skeleton3D" index="12"]
-transform = Transform3D(-0.9360254, 0.35138798, 0.01956541, 0.06669187, 0.12251738, 0.99022317, 0.3455554, 0.92817885, -0.13811421, 21.059042, 1.5142689, 19.241438)
+transform = Transform3D(-0.93573904, 0.35211653, 0.020161435, 0.066564806, 0.12017906, 0.9905182, 0.34635478, 0.9282084, -0.13589483, 21.048647, 1.4750376, 19.194414)
 
 [node name="AnimationPlayer" parent="Player/Mesh" index="1"]
 libraries = {}
@@ -254,7 +259,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_t3ofs")
 shape = SubResource("BoxShape3D_t3ofs")
 
 [node name="Floor2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4861994, -1.4527006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4425526, 2.4861994, -1.4527006)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.712903, 0.7067168, -1.9264526)
@@ -350,7 +355,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_t3ofs")
 shape = SubResource("BoxShape3D_dt6kx")
 
 [node name="Wall10" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.0820906e-08, 0, 0.6612145, 0, 1.6817756, 0, -0.24755347, 0, -2.8902603e-08, -1.0992452, 1.8735204, -10.605725)
+transform = Transform3D(-1.0820906e-08, 0, 0.6612145, 0, 1.6817756, 0, -0.24755347, 0, -2.8902603e-08, 1.1232218, 1.8735204, -10.605725)
 mesh = SubResource("BoxMesh_km2bi")
 surface_material_override/0 = SubResource("StandardMaterial3D_t3ofs")
 
@@ -358,6 +363,25 @@ surface_material_override/0 = SubResource("StandardMaterial3D_t3ofs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall10/StaticBody3D"]
 shape = SubResource("BoxShape3D_dt6kx")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("11_4ly05")]
+transform = Transform3D(-0.051673677, 0, 0.998664, 0, 1, 0, -0.998664, 0, -0.051673677, -3.0203626, 1.5317669, -6.7966394)
+
+[node name="ghost" parent="." instance=ExtResource("12_t3ofs")]
+transform = Transform3D(-0.9475343, 0, 0.31965393, 0, 1, 0, -0.31965393, 0, -0.9475343, 0.074305, 0.53240657, -5.8994384)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ghost"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ghost/StaticBody3D"]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0, 1.223872, 0)
+shape = SubResource("BoxShape3D_i4yi8")
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0383694, 2.9457066, -8.198233)
+light_energy = 0.3
+light_size = 0.095
+shadow_enabled = true
+shadow_blur = 4.0
 
 [editable path="Player"]
 [editable path="Player/Mesh"]
